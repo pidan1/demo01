@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- 组织机构标识 -->
+  <groupId>com.itheima</groupId>
+  <!-- 项目名 -->
+  <artifactId>HelloMaven</artifactId>
+  <!-- 版本号 -->
+  <version>0.0.1-SNAPSHOT</version>
+  <!-- 打包方式 -->
+  <packaging>war</packaging>
+  
+  <!-- 指定特殊的配置 -->
+  <build>
+		<plugins>
+		<!-- 指定JDK的版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- 指定Tomcat7 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<!-- 自定义端口号 -->
+					<port>9999</port>
+					<!-- 自定义项目访问路径 -->
+					<path>/hello</path>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+  
+  
+  
+  
+  
+  
+<!-- 指定依赖 -->
+  <dependencies>
+  <!-- 坐标 -->
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>servlet-api</artifactId>
+  		<version>2.5</version>
+  		<scope>provided</scope>
+  	</dependency>
+  </dependencies>
+</project>
